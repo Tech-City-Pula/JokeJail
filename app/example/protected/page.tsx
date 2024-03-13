@@ -5,15 +5,25 @@ import { redirect } from 'next/navigation';
 export default async function ProtectedGistPage() {
 	const supabase = createClient();
 
-	const { data } = await supabase.auth.getUser();
+	const userResponse = await supabase.auth.getUser();
 
-	if (!data.user) {
+	if (userResponse.error) {
+		redirect('/example?error=unauthenticated');
+	}
+
+	const profileResponse = await supabase
+		.from('profile')
+		.select('*')
+		.eq('id', userResponse.data.user.id)
+		.single();
+
+	if (profileResponse.error) {
 		redirect('/example?error=unauthenticated');
 	}
 
 	return (
 		<div>
-			Hello {data.user.email}
+			Hello {profileResponse.data.username}
 			<SignOutButton />
 		</div>
 	);
