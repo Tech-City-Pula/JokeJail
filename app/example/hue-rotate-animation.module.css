@@ -1,0 +1,13 @@
+@keyframes hue-rotate-animation {
+	from {
+		filter: hue-rotate(0deg);
+	}
+
+	to {
+		filter: hue-rotate(359deg);
+	}
+}
+
+.hue-rotate {
+	animation: hue-rotate-animation 30s infinite;
+}
