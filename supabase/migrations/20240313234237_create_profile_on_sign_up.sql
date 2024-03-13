@@ -10,7 +10,7 @@ CREATE OR REPLACE FUNCTION public.create_profile_on_sign_up()
 BEGIN
     RAISE LOG 'New row: %', row_to_json(NEW);
     INSERT INTO public.profile(id, username)
-        VALUES(NEW.id, NEW.raw_user_meta_data ->> 'name');
+        VALUES(NEW.id, COALESCE(NEW.raw_user_meta_data ->> 'name', ''));
     RETURN NEW;
 END;
 $function$;
