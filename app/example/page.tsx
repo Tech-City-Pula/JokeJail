@@ -18,7 +18,10 @@ export default function JokeJailLoginPage(props: Props) {
 	return (
 		<div className='w-full h-full grid grid-cols-12'>
 			{props.searchParams.error && (
-				<Alert variant='destructive' className='fixed top-12 max-w-md'>
+				<Alert
+					variant='destructive'
+					className='fixed top-12 left-1/2 -translate-x-1/2 z-50 bg-white max-w-md'
+				>
 					<AlertCircle className='h-4 w-4' />
 					<AlertTitle>Error</AlertTitle>
 					<AlertDescription>
