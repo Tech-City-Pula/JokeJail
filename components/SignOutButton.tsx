@@ -1,7 +1,7 @@
 'use client';
 
 import { createClient } from '@/lib/supabase/client';
-import { Button } from '../ui/button';
+import { Button } from './ui/button';
 import { useRouter } from 'next/navigation';
 
 export function SignOutButton() {
@@ -13,5 +13,9 @@ export function SignOutButton() {
 		router.push('/example');
 	}
 
-	return <Button onClick={signOut}>Sign out</Button>;
+	return (
+		<Button onClick={signOut} className='fixed bottom-6 right-6'>
+			Sign out
+		</Button>
+	);
 }
