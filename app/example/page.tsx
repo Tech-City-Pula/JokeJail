@@ -1,4 +1,4 @@
-import SignInButton from '@/components/example/SignInButton';
+import SignInButton from '@/components/SignInButton';
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
@@ -16,7 +16,7 @@ type Props = {
 
 export default function JokeJailLoginPage(props: Props) {
 	return (
-		<div className='w-full h-full grid grid-cols-12'>
+		<div className='w-full min-h-screen grid grid-cols-12'>
 			{props.searchParams.error && (
 				<Alert
 					variant='destructive'
