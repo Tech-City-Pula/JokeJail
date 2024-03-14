@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/cn';
 import { createClient } from '@/lib/supabase/client';
 import { FaDiscord } from 'react-icons/fa';
-import style from '@/app/example/hue-rotate-animation.module.css';
+import style from '@/app/hue-rotate-animation.module.css';
 
 export default function SignInButton() {
 	const supabase = createClient();
@@ -13,7 +13,7 @@ export default function SignInButton() {
 		await supabase.auth.signInWithOAuth({
 			provider: 'discord',
 			options: {
-				redirectTo: location.origin + '/api/auth/callback/example',
+				redirectTo: location.origin + '/api/auth/callback',
 			},
 		});
 	}

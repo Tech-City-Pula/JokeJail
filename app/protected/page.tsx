@@ -15,7 +15,7 @@ export default async function ProtectedExamplePage() {
 	const userResponse = await supabase.auth.getUser();
 
 	if (userResponse.error) {
-		redirect('/example?error=unauthenticated');
+		redirect('/?error=unauthenticated');
 	}
 
 	const profileResponse = await supabase
@@ -25,7 +25,7 @@ export default async function ProtectedExamplePage() {
 		.single();
 
 	if (profileResponse.error) {
-		redirect('/example?error=unauthenticated');
+		redirect('/?error=unauthenticated');
 	}
 
 	const jokesResponse = await supabase
