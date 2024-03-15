@@ -15,7 +15,7 @@ export default function SignInButton() {
 		await supabase.auth.signInWithOAuth({
 			provider: 'discord',
 			options: {
-				redirectTo: location.origin + '/api/auth/callback/gist',
+				redirectTo: location.origin + '/api/auth/callback',
 			},
 		});
 	}

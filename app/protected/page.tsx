@@ -9,7 +9,7 @@ export default async function ProtectedGistPage() {
 	const { data } = await supabase.auth.getUser();
 
 	if (!data.user) {
-		redirect('/gist?error=unauthenticated');
+		redirect('/?error=unauthenticated');
 	}
 
 	return (
