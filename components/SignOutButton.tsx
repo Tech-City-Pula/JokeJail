@@ -12,8 +12,6 @@ export function SignOutButton() {
 		console.log('implementiraj me!');
 
 		// LEVEL 1: step 4 implementirati sign out
-		// await supabase.auth.signOut();
-		// router.push('/');
 	}
 
 	return (

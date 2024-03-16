@@ -7,11 +7,7 @@ export default async function ProtectedExamplePage() {
 	const supabase = createClient();
 
 	// LEVEL 1: step 3 vratiti korisnika na login page s error-om ako nije autenticiran
-	// const userResponse = await supabase.auth.getUser();
 
-	// if (userResponse.error) {
-	// 	redirect('/?error=unauthenticated');
-	// }
 	return (
 		<main className='flex flex-col items-center justify-center p-4 md:p-6'>
 			<header className='text-center mb-8'>
