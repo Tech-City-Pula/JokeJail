@@ -9,8 +9,11 @@ export function SignOutButton() {
 	const router = useRouter();
 
 	async function signOut() {
-		await supabase.auth.signOut();
-		router.push('/');
+		console.log('implementiraj me!');
+
+		// LEVEL 1: step 4 implementirati sign out
+		// await supabase.auth.signOut();
+		// router.push('/');
 	}
 
 	return (

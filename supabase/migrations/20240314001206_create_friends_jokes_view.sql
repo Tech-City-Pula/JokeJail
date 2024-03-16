@@ -1,0 +1,23 @@
+-- // LEVEL 3 step 1
+-- CREATE VIEW public.friends_jokes AS
+-- SELECT
+--     j.id,
+--     j.created_at,
+--     j.profile_id,
+--     j.content,
+--     p.username
+-- FROM
+--     joke j
+--     JOIN profile p ON j.profile_id = p.id
+-- WHERE (EXISTS (
+--         SELECT
+--             1
+--         FROM
+--             friend f
+--         WHERE
+--             f.user_1 = auth.uid()
+--             AND f.user_2 = j.profile_id
+--             OR f.user_2 = auth.uid()
+--             AND f.user_1 = j.profile_id))
+-- ORDER BY
+--     j.created_at DESC;

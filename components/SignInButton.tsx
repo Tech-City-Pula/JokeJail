@@ -10,12 +10,15 @@ export default function SignInButton() {
 	const supabase = createClient();
 
 	async function signInWithDiscord() {
-		await supabase.auth.signInWithOAuth({
-			provider: 'discord',
-			options: {
-				redirectTo: location.origin + '/api/auth/callback',
-			},
-		});
+		console.log('implementiraj me!');
+
+		// LEVEL 1: step 2 implementirati sign in s discordom
+		// await supabase.auth.signInWithOAuth({
+		// 	provider: 'discord',
+		// 	options: {
+		// 		redirectTo: location.origin + '/api/auth/callback',
+		// 	},
+		// });
 	}
 
 	return (

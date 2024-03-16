@@ -1,2 +1,12 @@
-ALTER TABLE "public"."joke" ENABLE ROW LEVEL SECURITY;
-
+-- LEVEL zelim znati vise
+-- ALTER TABLE "public"."joke" ENABLE ROW LEVEL SECURITY;
+-- CREATE POLICY "Enable insert for authenticated users only" ON public.joke
+--     FOR INSERT TO authenticated
+--         WITH CHECK (TRUE);
+-- CREATE POLICY "Enable read access for all users" ON "public"."joke" TO public
+--     USING ((EXISTS (
+--         SELECT
+--             1
+--         FROM
+--             friend f
+--         WHERE (((f.user_1 = auth.uid()) AND (f.user_2 = joke.profile_id)) OR ((f.user_2 = auth.uid()) AND (f.user_1 = joke.profile_id))))));
