@@ -7,6 +7,7 @@ Napraviti login sustav koji koristi Discord kao OAuth provider
 - Populirati `.env.local` s podacima iz Supabasea (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)
 - Napraviti vlastitu aplikaciju na Discord developer portalu - https://discord.com/developers/applications
 - Unutar Supabase-a enablat Discord kao auth provider i dodati mu client id i client secret
+- Sa Supabase Discord providera kopirati redirect url i pasteati ga u Discord developer portalu pod OAuth2 -> Redirects
 1. Dodati OAuth callback url callback url koji ce potvrditi OAuth kod i vratiti nam session
 2. Na login stranici dodati handler za discord login koji poziva OAuth callback url
 3. Zastititi stranicu sa korisnickim podacima - vratiti korisnike koji nisu ulogirani na login stranicu
